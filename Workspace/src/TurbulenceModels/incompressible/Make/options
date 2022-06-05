@@ -1,0 +1,14 @@
+EXE_INC = \
+    -I../../findroot/lnInclude \
+    -I../turbulenceModels/lnInclude \
+    -I$(LIB_SRC)/transportModels \
+    -I$(LIB_SRC)/finiteVolume/lnInclude \
+    -I$(LIB_SRC)/meshTools/lnInclude
+
+LIB_LIBS = \
+    -L$(FOAM_USER_LIBBIN) \
+    -lincompressibleTransportModels \
+    -lturbulenceModels \
+    -lfiniteVolume \
+    -lmeshTools \
+    -lfindroot
