@@ -1,0 +1,6 @@
+data/**
+log.*
+[1-9][0-9]*
+[1-9]
+processor*
+constant/polyMesh/**
