@@ -1,7 +1,0 @@
-#!/bin/sh
-
-rm -fr [1-9]*
-rm -fr [0-9][1-9]*
-rm -fr postProcessing
-rm -fr logs log.*
-rm -fr processor*

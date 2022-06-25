@@ -1,0 +1,62 @@
+SOURCE += turbulenceModel.C
+
+LESdelta = LES/LESdeltas
+
+SOURCE += $(LESdelta)/LESdelta/LESdelta.C
+SOURCE += $(LESdelta)/cubeRootVolDelta/cubeRootVolDelta.C
+SOURCE += $(LESdelta)/PrandtlDelta/PrandtlDelta.C
+SOURCE += $(LESdelta)/vanDriestDelta/vanDriestDelta.C
+SOURCE += $(LESdelta)/smoothDelta/smoothDelta.C
+SOURCE += $(LESdelta)/maxDeltaxyz/maxDeltaxyz.C
+SOURCE += $(LESdelta)/IDDESDelta/IDDESDelta.C
+SOURCE += $(LESdelta)/maxDeltaxyzCubeRootLESDelta/maxDeltaxyzCubeRootLESDelta.C
+
+
+LESfilters = LES/LESfilters
+
+SOURCE += $(LESfilters)/LESfilter/LESfilter.C
+SOURCE += $(LESfilters)/simpleFilter/simpleFilter.C
+SOURCE += $(LESfilters)/laplaceFilter/laplaceFilter.C
+SOURCE += $(LESfilters)/anisotropicFilter/anisotropicFilter.C
+
+
+SOURCE += DES/DESModel/DESModelBase.C
+
+
+SOURCE += derivedFvPatchFields/fixedShearStress/fixedShearStressFvPatchVectorField.C
+SOURCE += derivedFvPatchFields/porousBafflePressure/porousBafflePressureFvPatchField.C
+
+
+wallFunctions = derivedFvPatchFields/wallFunctions
+
+nutWallFunctions = $(wallFunctions)/nutWallFunctions
+SOURCE += $(nutWallFunctions)/nutWallFunction/nutWallFunctionFvPatchScalarField.C
+
+SOURCE += $(nutWallFunctions)/nutkWallFunction/nutkWallFunctionFvPatchScalarField.C
+SOURCE += $(nutWallFunctions)/nutkRoughWallFunction/nutkRoughWallFunctionFvPatchScalarField.C
+
+SOURCE += $(nutWallFunctions)/nutUBlendedWallFunction/nutUBlendedWallFunctionFvPatchScalarField.C
+SOURCE += $(nutWallFunctions)/nutUWallFunction/nutUWallFunctionFvPatchScalarField.C
+SOURCE += $(nutWallFunctions)/nutUSpaldingWallFunction/nutUSpaldingWallFunctionFvPatchScalarField.C
+SOURCE += $(nutWallFunctions)/nutUTabulatedWallFunction/nutUTabulatedWallFunctionFvPatchScalarField.C
+SOURCE += $(nutWallFunctions)/nutLowReWallFunction/nutLowReWallFunctionFvPatchScalarField.C
+SOURCE += $(nutWallFunctions)/nutURoughWallFunction/nutURoughWallFunctionFvPatchScalarField.C
+
+epsilonWallFunctions = $(wallFunctions)/epsilonWallFunctions
+SOURCE += $(epsilonWallFunctions)/epsilonWallFunction/epsilonWallFunctionFvPatchScalarField.C
+
+omegaWallFunctions = $(wallFunctions)/omegaWallFunctions
+SOURCE += $(omegaWallFunctions)/omegaWallFunction/omegaWallFunctionFvPatchScalarField.C
+
+kqRWallFunctions = $(wallFunctions)/kqRWallFunctions
+SOURCE += $(kqRWallFunctions)/kqRWallFunction/kqRWallFunctionFvPatchFields.C
+SOURCE += $(kqRWallFunctions)/kLowReWallFunction/kLowReWallFunctionFvPatchScalarField.C
+
+
+RASBCs = RAS/derivedFvPatchFields
+
+SOURCE += $(RASBCs)/turbulentMixingLengthDissipationRateInlet/turbulentMixingLengthDissipationRateInletFvPatchScalarField.C
+SOURCE += $(RASBCs)/turbulentMixingLengthFrequencyInlet/turbulentMixingLengthFrequencyInletFvPatchScalarField.C
+
+
+LIB = $(FOAM_USER_LIBBIN)/libturbulenceModels
