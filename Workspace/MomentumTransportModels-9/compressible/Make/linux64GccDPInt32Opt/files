@@ -1,0 +1,4 @@
+SOURCE += compressibleMomentumTransportModel.C
+SOURCE += dynamicMomentumTransportModels/dynamicMomentumTransportModels.C
+
+LIB = $(FOAM_USER_LIBBIN)/libcompressibleMomentumTransportModels

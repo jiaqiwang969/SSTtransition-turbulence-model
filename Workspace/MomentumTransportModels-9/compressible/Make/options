@@ -1,0 +1,12 @@
+EXE_INC = \
+    -I../findroot/lnInclude \
+    -I../momentumTransportModels/lnInclude \
+    -I$(LIB_SRC)/transportModels/lnInclude \
+    -I$(LIB_SRC)/finiteVolume/lnInclude \
+    -I$(LIB_SRC)/meshTools/lnInclude \
+
+LIB_LIBS = \
+    -Lfindroot \
+    -ltransportModels \
+    -lfiniteVolume \
+    -lmeshTools

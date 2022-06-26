@@ -1,0 +1,75 @@
+SOURCE += momentumTransportModel.C
+SOURCE += RAS/v2f/v2fBase.C
+
+LESdelta = LES/LESdeltas
+
+SOURCE += $(LESdelta)/LESdelta/LESdelta.C
+SOURCE += $(LESdelta)/cubeRootVolDelta/cubeRootVolDelta.C
+SOURCE += $(LESdelta)/PrandtlDelta/PrandtlDelta.C
+SOURCE += $(LESdelta)/vanDriestDelta/vanDriestDelta.C
+SOURCE += $(LESdelta)/smoothDelta/smoothDelta.C
+SOURCE += $(LESdelta)/maxDeltaxyz/maxDeltaxyz.C
+SOURCE += $(LESdelta)/IDDESDelta/IDDESDelta.C
+
+
+LESfilters = LES/LESfilters
+
+SOURCE += $(LESfilters)/LESfilter/LESfilter.C
+SOURCE += $(LESfilters)/simpleFilter/simpleFilter.C
+SOURCE += $(LESfilters)/laplaceFilter/laplaceFilter.C
+SOURCE += $(LESfilters)/anisotropicFilter/anisotropicFilter.C
+
+
+# Turbulence BCs
+SOURCE += derivedFvPatchFields/fixedShearStress/fixedShearStressFvPatchVectorField.C
+SOURCE += derivedFvPatchFields/porousBafflePressure/porousBafflePressureFvPatchField.C
+
+
+# Wall function BCs
+wallFunctions = derivedFvPatchFields/wallFunctions
+
+nutWallFunctions = $(wallFunctions)/nutWallFunctions
+SOURCE += $(nutWallFunctions)/nutWallFunction/nutWallFunctionFvPatchScalarField.C
+
+SOURCE += $(nutWallFunctions)/nutkWallFunction/nutkWallFunctionFvPatchScalarField.C
+SOURCE += $(nutWallFunctions)/nutkRoughWallFunction/nutkRoughWallFunctionFvPatchScalarField.C
+
+SOURCE += $(nutWallFunctions)/nutUWallFunction/nutUWallFunctionFvPatchScalarField.C
+SOURCE += $(nutWallFunctions)/nutUSpaldingWallFunction/nutUSpaldingWallFunctionFvPatchScalarField.C
+SOURCE += $(nutWallFunctions)/nutLowReWallFunction/nutLowReWallFunctionFvPatchScalarField.C
+SOURCE += $(nutWallFunctions)/nutURoughWallFunction/nutURoughWallFunctionFvPatchScalarField.C
+
+epsilonWallFunctions = $(wallFunctions)/epsilonWallFunctions
+SOURCE += $(epsilonWallFunctions)/epsilonWallFunction/epsilonWallFunctionFvPatchScalarField.C
+
+omegaWallFunctions = $(wallFunctions)/omegaWallFunctions
+SOURCE += $(omegaWallFunctions)/omegaWallFunction/omegaWallFunctionFvPatchScalarField.C
+
+kqRWallFunctions = $(wallFunctions)/kqRWallFunctions
+SOURCE += $(kqRWallFunctions)/kqRWallFunction/kqRWallFunctionFvPatchFields.C
+SOURCE += $(kqRWallFunctions)/kLowReWallFunction/kLowReWallFunctionFvPatchScalarField.C
+
+v2WallFunctions = $(wallFunctions)/v2WallFunctions
+SOURCE += $(v2WallFunctions)/v2WallFunction/v2WallFunctionFvPatchScalarField.C
+
+fWallFunctions = $(wallFunctions)/fWallFunctions
+SOURCE += $(fWallFunctions)/fWallFunction/fWallFunctionFvPatchScalarField.C
+
+
+RASBCs = RAS/derivedFvPatchFields
+
+# Inlet turbulence BCs
+SOURCE += $(RASBCs)/turbulentMixingLengthDissipationRateInlet/turbulentMixingLengthDissipationRateInletFvPatchScalarField.C
+SOURCE += $(RASBCs)/turbulentMixingLengthFrequencyInlet/turbulentMixingLengthFrequencyInletFvPatchScalarField.C
+
+generalisedNewtonianViscosityModels = laminar/generalisedNewtonian/generalisedNewtonianViscosityModels
+SOURCE += $(generalisedNewtonianViscosityModels)/generalisedNewtonianViscosityModel/generalisedNewtonianViscosityModel.C
+SOURCE += $(generalisedNewtonianViscosityModels)/generalisedNewtonianViscosityModel/generalisedNewtonianViscosityModelNew.C
+SOURCE += $(generalisedNewtonianViscosityModels)/CrossPowerLaw/CrossPowerLaw.C
+SOURCE += $(generalisedNewtonianViscosityModels)/BirdCarreau/BirdCarreau.C
+SOURCE += $(generalisedNewtonianViscosityModels)/Casson/Casson.C
+SOURCE += $(generalisedNewtonianViscosityModels)/HerschelBulkley/HerschelBulkley.C
+SOURCE += $(generalisedNewtonianViscosityModels)/powerLaw/powerLaw.C
+SOURCE += $(generalisedNewtonianViscosityModels)/strainRateFunction/strainRateFunction.C
+
+LIB = $(FOAM_USER_LIBBIN)/libmomentumTransportModels

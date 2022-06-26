@@ -1,0 +1,11 @@
+SOURCE += incompressibleMomentumTransportModel.C
+
+SOURCE += kinematicMomentumTransportModels/kinematicMomentumTransportModels.C
+SOURCE += kinematicMomentumTransportModels/RAS/qZeta/qZeta.C
+SOURCE += kinematicMomentumTransportModels/RAS/kkLOmega/kkLOmega.C
+SOURCE += kinematicMomentumTransportModels/RAS/LamBremhorstKE/LamBremhorstKE.C
+SOURCE += kinematicMomentumTransportModels/RAS/LienLeschziner/LienLeschziner.C
+SOURCE += kinematicMomentumTransportModels/RAS/ShihQuadraticKE/ShihQuadraticKE.C
+SOURCE += kinematicMomentumTransportModels/RAS/LienCubicKE/LienCubicKE.C
+
+LIB = $(FOAM_USER_LIBBIN)/libincompressibleMomentumTransportModels
