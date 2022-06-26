@@ -5,12 +5,13 @@
 
 
 
-## Modified for v2012:
-Original code is [sstTransition](https://gitlab.com/tilasoldo/openfoam_share/-/blob/master/src/TurbulenceModels/turbulenceModels/Base/sstTransition/sstTransitionBase.C), update to ***compressible*** and combine it to IDDES. 
-
-Tip: multiply "*alpha*rho" in solving equation
+## [Validate in v2012](https://github.com/jiaqiwang969/Axis-2Dbump):
+Improve: Original code is [sstTransition](https://gitlab.com/tilasoldo/openfoam_share/-/blob/master/src/TurbulenceModels/turbulenceModels/Base/sstTransition/sstTransitionBase.C), update to ***compressible*** and combine it to IDDES. Tip: multiply "\*alpha\*rho" in solving equation
 
 
+### How to use?
+
+Add turbulenceProperties
 ```
 simulationType  LES;
 
@@ -32,7 +33,5 @@ LES
 ```
 
 
-Todo: for v9
-=======
-- Ref: [SSTtransition turbulence model](http://www.tfd.chalmers.se/~hani/kurser/OS_CFD/#YEAR_2020) with [newversion](https://www.cfd-online.com/Forums/openfoam-solving/180356-sst-transition.html) [gammaReTheta](https://gitlab.com/tilasoldo/openfoam_share/-/tree/master/src)
->>>>>>> 2867806ac48d28e6904eadbc07295aa0a5d62288
+## Todo: for v9
+
