@@ -34,7 +34,7 @@ LES
 
 
 ## V9 version
-Validate？not sure why is a bit different.
+Validate？not sure why is a bit different. I guess is the different setting of freeVelocity(default).
 
 <img src="https://cdn.mathpix.com/snip/images/Zg9KfN9V065uPpVOvtGGXDVDeCuHH91U53jO1BYY8mo.original.fullsize.png" width="340px">
 
